@@ -8169,7 +8169,7 @@ namespace simdjson::arm64 {
 /* begin file src/generic/atomparsing.h */
 namespace atomparsing {
 
-really_inline uint32_t string_to_uint32(const char* str) { return *reinterpret_cast<const uint32_t *>(str); }
+really_inline uint32_t string_to_uint32(const char* str) { uint32_t val; std::memcpy(&val, str, sizeof(uint32_t)); return val; }
 
 WARN_UNUSED
 really_inline bool str4ncmp(const uint8_t *src, const char* atom) {
@@ -9657,7 +9657,7 @@ namespace simdjson::fallback {
 /* begin file src/generic/atomparsing.h */
 namespace atomparsing {
 
-really_inline uint32_t string_to_uint32(const char* str) { return *reinterpret_cast<const uint32_t *>(str); }
+really_inline uint32_t string_to_uint32(const char* str) { uint32_t val; std::memcpy(&val, str, sizeof(uint32_t)); return val; }
 
 WARN_UNUSED
 really_inline bool str4ncmp(const uint8_t *src, const char* atom) {
@@ -11111,7 +11111,7 @@ namespace simdjson::haswell {
 /* begin file src/generic/atomparsing.h */
 namespace atomparsing {
 
-really_inline uint32_t string_to_uint32(const char* str) { return *reinterpret_cast<const uint32_t *>(str); }
+really_inline uint32_t string_to_uint32(const char* str) { uint32_t val; std::memcpy(&val, str, sizeof(uint32_t)); return val; }
 
 WARN_UNUSED
 really_inline bool str4ncmp(const uint8_t *src, const char* atom) {
@@ -12570,7 +12570,7 @@ namespace simdjson::westmere {
 /* begin file src/generic/atomparsing.h */
 namespace atomparsing {
 
-really_inline uint32_t string_to_uint32(const char* str) { return *reinterpret_cast<const uint32_t *>(str); }
+really_inline uint32_t string_to_uint32(const char* str) { uint32_t val; std::memcpy(&val, str, sizeof(uint32_t)); return val; }
 
 WARN_UNUSED
 really_inline bool str4ncmp(const uint8_t *src, const char* atom) {
